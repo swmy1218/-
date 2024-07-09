@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>共同制作</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="500b5403-f3cc-41fd-b1a3-c927ba03b946" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/groups_blue.svg"/></div><h1 class="page-title">共同制作</h1><p class="page-description"></p></header><div class="page-body"><ul id="35307c61-d6c5-48f9-b395-76e0cd9d8e99" class="toggle"><li><details open=""><summary>ゲーム開発概要</summary><h2 id="6e84bc48-d3a3-4285-a93c-7cd19217d047" class="">ストーリー</h2><p id="a77e22c6-0cc3-42fa-ac44-1d2b86d55510" class="">ウイルスに感染したデジタル世界を救うために仮想現実世界に入る技術を使って旅をする。各ステージは異なるコンピューター内やゲームの世界を表現していて、それぞれの世界がドット2D,ドット,2D,3Dで表現されている。プレイヤーはウイルスを撃退し、システムを修復するためにさまざまな世界のゲームに挑戦する。</p><h2 id="f5112d62-d990-442e-b101-b3b40bf575a8" class="">キャラクター</h2><table id="e063a840-b320-4056-9cc6-6187aad846c4" class="simple-table"><thead class="simple-table-header"><tr id="036d4e74-48b2-484c-98f5-e6e64d4fdd2f"><th id="_o`F" class="simple-table-header-color simple-table-header">キャラクター</th><th id="YZBa" class="simple-table-header-color simple-table-header">詳細</th></tr></thead><tbody><tr id="0ab38ae8-5539-4974-bf00-c5dec8aa33d4"><th id="_o`F" class="simple-table-header-color simple-table-header">主人公</th><td id="YZBa" class="">(未定)</td></tr><tr id="77a1f575-8aff-421a-afc6-4d6eee2326bf"><th id="_o`F" class="simple-table-header-color simple-table-header">その他キャラ</th><td id="YZBa" class="">(未定)</td></tr></tbody></table><h2 id="1fa2a58b-f6ca-4808-9d26-27b9689d5547" class="">ステージごとの特徴</h2><table id="06bccaef-805d-48b1-840f-aebe6c9dd64d" class="simple-table"><thead class="simple-table-header"><tr id="e0924361-eec6-4adf-a196-a10880568efc"><th id="phQo" class="simple-table-header-color simple-table-header">ステージ</th><th id="UOiH" class="simple-table-header-color simple-table-header">特徴</th></tr></thead><tbody><tr id="0b6fc449-4787-4ff8-ad8a-1f363bc0f11c"><th id="phQo" class="simple-table-header-color simple-table-header">ドット2D</th><td id="UOiH" class="">USAマリオやテラリア等のドットで左右移動のみのゲームを参考</td></tr><tr id="70f1b421-9261-44b7-9efd-7f8f1393e6cf"><th id="phQo" class="simple-table-header-color simple-table-header">ドット絵</th><td id="UOiH" class="">ドラクエ1やUNDERTALE等のドットで左右上下移動のゲームを参考</td></tr><tr id="15f2d905-bec0-4ba5-b5d8-33f190aed8bc"><th id="phQo" class="simple-table-header-color simple-table-header">2D</th><td id="UOiH" class="">Hollow KnightやNewスーパーマリオブラザーズ等のドットではないが左右移動のゲームを参考</td></tr><tr id="d14cf943-1c25-47d3-8b40-ea9487cafa92"><th id="phQo" class="simple-table-header-color simple-table-header">3D</th><td id="UOiH" class="">原神やモンハン等の左右上下に加え奥行きもあるゲームを参考</td></tr></tbody></table><h2 id="ac00798d-3cc5-4550-ad21-a18375673050" class="">ゲームエンジン</h2><table id="bfcf98c9-2c92-4368-a404-d8379e7d2e7c" class="simple-table"><thead class="simple-table-header"><tr id="97d3f811-8f92-4e2e-af6d-5c55dfb3b4e2"><th id="D`fF" class="simple-table-header-color simple-table-header">ゲームエンジン</th><th id="\lEC" class="simple-table-header-color simple-table-header">詳細</th></tr></thead><tbody><tr id="77bd2eb5-5509-491b-86d5-d71b77a3abbb"><th id="D`fF" class="simple-table-header-color simple-table-header">使用するゲームエンジン</th><td id="\lEC" class="">Unreal EngineかUnity</td></tr></tbody></table><h2 id="3f8833ec-cdda-44e1-ab40-111f797f85c5" class="">ゲームのプログラミング</h2><table id="28deb62d-6c50-40be-9642-a9109d3e5d91" class="simple-table"><thead class="simple-table-header"><tr id="2bc02d54-11c8-4f82-b4a2-ca400bbefa6f"><th id="KrS}" class="simple-table-header-color simple-table-header">カテゴリ</th><th id="=q`k" class="simple-table-header-color simple-table-header">使用言語</th></tr></thead><tbody><tr id="f760f15c-c041-4e12-9564-048d54e9e2dc"><th id="KrS}" class="simple-table-header-color simple-table-header">Unreal Engine</th><td id="=q`k" class="">C++</td></tr><tr id="3e572415-2cd3-4a61-a6ab-6e0115e7ebf5"><th id="KrS}" class="simple-table-header-color simple-table-header">Unity</th><td id="=q`k" class="">C#</td></tr><tr id="519c562a-3de8-443f-8a62-445264df27b0"><th id="KrS}" class="simple-table-header-color simple-table-header">バックエンド</th><td id="=q`k" class="">Python, Ruby, Java, SQL</td></tr><tr id="8fa4017f-0f35-4ecf-86b0-587906ee383c"><th id="KrS}" class="simple-table-header-color simple-table-header">Web関連</th><td id="=q`k" class="">HTML, CSS, JavaScript</td></tr></tbody></table><h2 id="fde79511-e7ef-48dc-89f2-5f754e0e27c8" class="">サウンドと音楽</h2><table id="4605225e-2c17-4e2e-b917-5e8d650cb6ae" class="simple-table"><thead class="simple-table-header"><tr id="3dfe58c9-4659-4e52-aaab-cfd8f553fd1e"><th id="{y|Y" class="simple-table-header-color simple-table-header">カテゴリ</th><th id="~CEl" class="simple-table-header-color simple-table-header">詳細</th></tr></thead><tbody><tr id="fd8fb240-2f65-4407-8aab-f041d6a63faf"><th id="{y|Y" class="simple-table-header-color simple-table-header">使用ツール</th><td id="~CEl" class="">GarageBand、Band Lab、Adobe Audition等</td></tr><tr id="5344567b-7437-4e29-9daa-c30fa8b80251"><th id="{y|Y" class="simple-table-header-color simple-table-header">内容</th><td id="~CEl" class="">タイトル画面、スタート画面、冒険中、戦闘中、ステージごと、イベントごと、エンディングのBGMと効果音制作</td></tr></tbody></table><h2 id="9148ae8b-9643-4520-ae58-3cb07ec6ec6b" class="">リリース</h2><table id="ea5d8110-ceb0-4988-956f-b640bf0ebc06" class="simple-table"><thead class="simple-table-header"><tr id="9d4565a8-8733-4e34-a08f-5d406b4a0003"><th id="h`EP" class="simple-table-header-color simple-table-header">カテゴリ</th><th id="Bs_M" class="simple-table-header-color simple-table-header">詳細</th></tr></thead><tbody><tr id="08a8d2a1-1bad-4acf-9bb2-377014a77ae7"><th id="h`EP" class="simple-table-header-color simple-table-header">配信プラットフォーム</th><td id="Bs_M" class="">(未定、多分BOOTHかSteam)</td></tr><tr id="b01fce55-224d-41f2-a241-08afed71b10e"><th id="h`EP" class="simple-table-header-color simple-table-header">リリース予定日</th><td id="Bs_M" class="">2025年3月</td></tr></tbody></table><h2 id="37515a9e-ee9d-4fdb-aec8-dc2df03d8894" class="">メンバーの役割</h2><table id="3effdde4-3b75-425a-9ced-d149fbfac3c0" class="simple-table"><thead class="simple-table-header"><tr id="3ed6579b-ca38-4465-babf-3e249090b1b5"><th id="eyA`" class="simple-table-header-color simple-table-header">チーム名</th><th id="Y^[d" class="simple-table-header-color simple-table-header">メンバー</th><th id="T_y&gt;" class="simple-table-header-color simple-table-header">役割</th></tr></thead><tbody><tr id="98a6eefd-8106-41c2-8f9d-ce4642ff8bbb"><th id="eyA`" class="simple-table-header-color simple-table-header">ブレンダーチーム</th><td id="Y^[d" class="">秋山</td><td id="T_y&gt;" class="">Blenderで2D or 3Dの背景オブジェクトの制作</td></tr><tr id="f7aa3a7d-2dc6-47c9-bb48-d14170159f81"><th id="eyA`" class="simple-table-header-color simple-table-header">ブレンダーチーム</th><td id="Y^[d" class="">生田</td><td id="T_y&gt;" class="">Blenderで2D or 3Dの背景オブジェクトの制作</td></tr><tr id="10eb5963-3cbb-4a44-ab18-2c1f3d6d6e00"><th id="eyA`" class="simple-table-header-color simple-table-header">ブレンダーチーム</th><td id="Y^[d" class="">𫝆野</td><td id="T_y&gt;" class="">Blenderで2D or 3Dの背景オブジェクトの制作</td></tr><tr id="8adaeaab-6d53-4501-a389-b80bcde89ea8"><th id="eyA`" class="simple-table-header-color simple-table-header">プログラミングチーム</th><td id="Y^[d" class="">上野(そた)</td><td id="T_y&gt;" class="">宮井のサポート</td></tr><tr id="6c72f091-c25c-47ec-b6ef-0435b7466e2f"><th id="eyA`" class="simple-table-header-color simple-table-header">プログラミングチーム</th><td id="Y^[d" class="">上野(ゆづき)</td><td id="T_y&gt;" class="">全体のサポート、バックエンド開発、音楽制作</td></tr><tr id="46179dab-d271-4d6c-9f07-7d127f496677"><th id="eyA`" class="simple-table-header-color simple-table-header">プログラミングチーム</th><td id="Y^[d" class="">河口</td><td id="T_y&gt;" class="">バックエンド開発</td></tr><tr id="3b1ebd5e-4cb4-4c00-8cc4-8fbbb23d9c05"><th id="eyA`" class="simple-table-header-color simple-table-header">プログラミングチーム</th><td id="Y^[d" class="">千葉</td><td id="T_y&gt;" class="">バックエンド開発、Unity, Unreal Engineの開発</td></tr><tr id="01415581-3348-49ab-b2d9-a90355568c7f"><th id="eyA`" class="simple-table-header-color simple-table-header">デザインチーム</th><td id="Y^[d" class="">楠城</td><td id="T_y&gt;" class="">ドット絵の制作、Unityの開発</td></tr><tr id="f21646f6-6775-4c6c-9fd3-5f8e44d44c60"><th id="eyA`" class="simple-table-header-color simple-table-header">デザインチーム</th><td id="Y^[d" class="">西田</td><td id="T_y&gt;" class="">キャラデザインやキャラメイクの制作</td></tr><tr id="30d6ff78-d34e-41e9-ad54-2c201e8944ab"><th id="eyA`" class="simple-table-header-color simple-table-header">プログラミングチーム</th><td id="Y^[d" class="">宮井</td><td id="T_y&gt;" class="">フロントエンドやデザインの開発</td></tr><tr id="26eb0966-8629-406c-baf0-b648b0af9d31"><th id="eyA`" class="simple-table-header-color simple-table-header">デザインチーム</th><td id="Y^[d" class="">森井</td><td id="T_y&gt;" class="">キャラデザインやキャラメイク、LIVE2Dを使ってイラストのプログラミング</td></tr><tr id="36af97ce-3807-4085-9fd9-d9ec16713c24"><th id="eyA`" class="simple-table-header-color simple-table-header">プログラミングチーム</th><td id="Y^[d" class="">諸岡</td><td id="T_y&gt;" class="">フロントエンドの開発、Unityの開発</td></tr></tbody></table></details></li></ul><hr id="6bd9c0d7-8b26-4cb8-abea-0b8c9ae3bb58"/><ul id="67cc8fd0-2c7e-487f-9a46-b6861d790b27" class="toggle"><li><details open=""><summary><strong>タスク</strong></summary><div id="5b9c44ba-6aab-4470-9f78-a367d12e1ca1" class="collection-content"><h4 class="collection-title">タスク</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>タスク名</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>ステータス</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>期限</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>優先度</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/groups_gray.svg" style="width:14px;height:14px"/></span>担当者</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>チーム</th></tr></thead><tbody><tr id="004b7fea-0aae-46fe-a635-27881e532595"><td class="cell-title"><a href="https://www.notion.so/004b7fea0aae46fea63527881e532595?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>ゲームコンセプトの確立</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"><time>@2024/07/10</time></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-red">高</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-gray">全員</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-gray">全体</span></td></tr><tr id="6d761ee5-a0ee-489c-b8cd-6fa7e30bfe78"><td class="cell-title"><a href="https://www.notion.so/6d761ee5a0ee489cb8cd6fa7e30bfe78?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>フロントエンドの設計</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-yellow">中</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">上野(そた)</span><span class="selected-value select-value-color-default">宮井</span><span class="selected-value select-value-color-default">楠城</span><span class="selected-value select-value-color-default">河口</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-blue">プログラミング</span></td></tr><tr id="525446ea-1857-47fc-b51b-ae9a2d0612e5"><td class="cell-title"><a href="https://www.notion.so/525446ea185747fcb51bae9a2d0612e5?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>バックエンドの設計</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-yellow">中</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">上野(ゆづき)</span><span class="selected-value select-value-color-default">千葉</span><span class="selected-value select-value-color-default">河口</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-blue">プログラミング</span></td></tr><tr id="dd31ec65-a561-4cfc-af00-dae2132bf2ad"><td class="cell-title"><a href="https://www.notion.so/dd31ec65a5614cfcaf00dae2132bf2ad?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>ドットステージの設計</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-yellow">中</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-gray">未定</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-purple">ブレンダー</span></td></tr><tr id="d5220c2a-c057-47cb-9bc3-72c893333833"><td class="cell-title"><a href="https://www.notion.so/2D-d5220c2ac05747cb9bc372c893333833?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>2Dステージの設計</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-yellow">中</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">今野</span><span class="selected-value select-value-color-default">生田</span><span class="selected-value select-value-color-default">秋山</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-purple">ブレンダー</span></td></tr><tr id="15312dad-eb4d-48c5-ac35-250ed3b9c9f5"><td class="cell-title"><a href="https://www.notion.so/3D-15312dadeb4d48c5ac35250ed3b9c9f5?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>3Dステージの設計</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-green">低</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">今野</span><span class="selected-value select-value-color-default">生田</span><span class="selected-value select-value-color-default">秋山</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-purple">ブレンダー</span></td></tr><tr id="0e70c251-f9a4-4963-bf8b-de3767e71015"><td class="cell-title"><a href="https://www.notion.so/0e70c251f9a44963bf8bde3767e71015?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>ドット絵キャラのデザイン</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-yellow">中</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">楠城</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-orange">デザイン</span></td></tr><tr id="0f3b7aac-cacb-44f1-8748-057442aa3f4b"><td class="cell-title"><a href="https://www.notion.so/2D-0f3b7aaccacb44f18748057442aa3f4b?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>2Dキャラのデザイン</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-yellow">中</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">森井</span><span class="selected-value select-value-color-default">西田</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-orange">デザイン</span></td></tr><tr id="19371758-bdfb-44f4-8259-cedead2ecad9"><td class="cell-title"><a href="https://www.notion.so/3D-19371758bdfb44f48259cedead2ecad9?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>3Dキャラのデザイン</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-green">低</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">森井</span><span class="selected-value select-value-color-default">西田</span></td><td class="cell-q{zk"><span class="selected-value select-value-color-orange">デザイン</span></td></tr><tr id="76133ea1-182e-4ceb-a2b6-4285ebdb4292"><td class="cell-title"><a href="https://www.notion.so/76133ea1182e4ceba2b64285ebdb4292?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>音楽と効果音の設計</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-yellow">中</span></td><td class="cell-notion://tasks/tags_property"><span class="selected-value select-value-color-default">上野(ゆづき)</span></td><td class="cell-q{zk"></td></tr><tr id="87311927-2e04-439e-98c1-8c47d1cf4279"><td class="cell-title"><a href="https://www.notion.so/873119272e04439e98c18c47d1cf4279?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>テストとデバッグ</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-green">低</span></td><td class="cell-notion://tasks/tags_property"></td><td class="cell-q{zk"></td></tr><tr id="8b89eee8-0ea3-4759-a1df-61739bf6cbf4"><td class="cell-title"><a href="https://www.notion.so/8b89eee80ea34759a1df61739bf6cbf4?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>リリース準備</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-green">低</span></td><td class="cell-notion://tasks/tags_property"></td><td class="cell-q{zk"></td></tr><tr id="b78faad0-fd52-424b-8977-a32182b8ccd4"><td class="cell-title"><a href="https://www.notion.so/b78faad0fd52424b8977a32182b8ccd4?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>正式リリース</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"><span class="selected-value select-value-color-green">低</span></td><td class="cell-notion://tasks/tags_property"></td><td class="cell-q{zk"></td></tr><tr id="33579d75-c2b2-4872-84b2-4af8ae547405"><td class="cell-title"><a href="https://www.notion.so/33579d75c2b2487284b24af8ae547405?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>サーバー</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"></td><td class="cell-notion://tasks/tags_property"></td><td class="cell-q{zk"></td></tr><tr id="be389ef9-bd30-45d0-b2a1-5b930238fd89"><td class="cell-title"><a href="https://www.notion.so/UI-be389ef9bd3045d0b2a15b930238fd89?pvs=21"><img class="icon" src="https://www.notion.so/icons/clipping_lightgray.svg"/>UI</a></td><td class="cell-notion://tasks/status_property"><span class="status-value"><div class="status-dot"></div>未着手</span></td><td class="cell-notion://tasks/due_date_property"></td><td class="cell-notion://tasks/priority_property"></td><td class="cell-notion://tasks/tags_property"></td><td class="cell-q{zk"></td></tr></tbody></table><br/><br/></div></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
